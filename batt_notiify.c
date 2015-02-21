@@ -139,7 +139,8 @@ int main(int argc, char * argv[]) {
 
         printf("%f\n", battery_percent);
 
-        if (battery_percent < CRITICAL) {
+        if (batt.status == 1);
+        else if (battery_percent < CRITICAL) {
             send_notification(CRITICAL, 5000);}
         else if (battery_percent < LOW)
             send_notification(LOW, 5000);
