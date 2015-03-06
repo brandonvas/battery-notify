@@ -6,7 +6,7 @@
 #define CRITICAL 10
 #define LOW      15
 #define BATTERY_STRING_LENGTH 40
-#define UPDATE_RATE 10 // In seconds
+#define UPDATE_RATE .1 // In seconds
 #define NOTIFICATION_TIMEOUT 5000 // In ms, with a minimum of 1 second
 
 struct Battery {
@@ -103,6 +103,7 @@ int get_battery_info(struct Battery * batt) {
     getline(&line,&nbytes,fp);
 
     free(line);
+    fclose(fp);
     return 0;
 }
 
