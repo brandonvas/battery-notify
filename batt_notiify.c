@@ -6,7 +6,7 @@
 #define CRITICAL 10
 #define LOW      15
 #define BATTERY_STRING_LENGTH 40
-#define UPDATE_RATE .1 // In seconds
+#define UPDATE_RATE 10 // In seconds
 #define NOTIFICATION_TIMEOUT 5000 // In ms, with a minimum of 1 second
 
 struct Battery {
@@ -137,8 +137,6 @@ int main(int argc, char * argv[]) {
     while(1) {
         get_battery_info(&batt);
         battery_percent = (batt.energy_now/batt.energy_full_design)*100;
-
-        printf("%f\n", battery_percent);
 
         if (batt.status == 1);
         else if (battery_percent < CRITICAL) {
